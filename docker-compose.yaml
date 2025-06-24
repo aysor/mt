@@ -1,0 +1,13 @@
+version: '4'
+
+services:
+  myapp:
+    image: 'moneytransferapp:4.0'
+    container_name: 'moneytransfercontainer'
+    volumes:
+      - "C:/Users/Aysel/MySpecialDockerFolder:/app/container_output_dir"
+
+    ports:
+      - '5500:5500'
+
+    build: ./
