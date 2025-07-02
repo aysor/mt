@@ -13,7 +13,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import ru.netology.moneytransferservice.model.ConfirmModel;
 import ru.netology.moneytransferservice.model.MoneyTransferModel;
-import ru.netology.moneytransferservice.model.Response;
+import ru.netology.moneytransferservice.model.MoneyTransferServiceResponse;
 import ru.netology.moneytransferservice.testModel.TestModel;
 
 @Testcontainers
@@ -41,18 +41,18 @@ class MoneyTransferServiceApplicationTests {
     @DisplayName("Test for '/transfer'")
     @Test
     void contextLoadsTestOne(){
-        ResponseEntity<Response> forTransfer = restTemplate.postForEntity(HOST + portRandom +
-                TestModel.ENDPOINT_TRANSFER, TRANSFER_REQUEST, Response.class);
-        Response expected = new Response(1);
+        ResponseEntity<MoneyTransferServiceResponse> forTransfer = restTemplate.postForEntity(HOST + portRandom +
+                TestModel.ENDPOINT_TRANSFER, TRANSFER_REQUEST, MoneyTransferServiceResponse.class);
+        MoneyTransferServiceResponse expected = new MoneyTransferServiceResponse(1);
         Assertions.assertEquals(forTransfer.getBody(), expected);
     }
 
     @DisplayName("Test for '/confirmOperation'")
     @Test
     void contextLoadsConfirmOperation(){
-        ResponseEntity<Response> forConfirmOperation = restTemplate.postForEntity(HOST + portRandom +
-                TestModel.ENDPOINT_CONFIRM, CONFIRM_OPERATION_REQUEST, Response.class);
-        Response expected = new Response(1);
+        ResponseEntity<MoneyTransferServiceResponse> forConfirmOperation = restTemplate.postForEntity(HOST + portRandom +
+                TestModel.ENDPOINT_CONFIRM, CONFIRM_OPERATION_REQUEST, MoneyTransferServiceResponse.class);
+        MoneyTransferServiceResponse expected = new MoneyTransferServiceResponse(1);
         Assertions.assertEquals(forConfirmOperation.getBody(), expected);
     }
 }

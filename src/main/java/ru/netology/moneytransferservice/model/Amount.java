@@ -7,7 +7,7 @@ public class Amount {
     private String currency;
 
     public Amount(BigDecimal amount, String currency) {
-        this.value = amount;
+        this.value = amount == null ? amount : amount.divide(new BigDecimal(100));
         this.currency = currency;
     }
 
@@ -20,7 +20,8 @@ public class Amount {
     }
 
     public void setValue(BigDecimal value) {
-        this.value = value.divide(new BigDecimal(100));
+        //this.value = value.divide(new BigDecimal(100));
+        this.value = value;
     }
 
     @Override

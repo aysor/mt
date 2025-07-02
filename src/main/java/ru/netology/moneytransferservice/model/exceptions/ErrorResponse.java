@@ -1,9 +1,9 @@
 package ru.netology.moneytransferservice.model.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import ru.netology.moneytransferservice.model.Response;
+import ru.netology.moneytransferservice.model.MoneyTransferServiceResponse;
 
-public class ErrorResponse extends Response {
+public class ErrorResponse extends MoneyTransferServiceResponse {
     @JsonProperty("id")
     private int id;
 

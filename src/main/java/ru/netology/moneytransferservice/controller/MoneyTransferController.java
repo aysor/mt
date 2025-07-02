@@ -3,8 +3,7 @@ package ru.netology.moneytransferservice.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.moneytransferservice.model.ConfirmModel;
 import ru.netology.moneytransferservice.model.MoneyTransferModel;
-import ru.netology.moneytransferservice.model.Response;
-import ru.netology.moneytransferservice.model.exceptions.ErrorResponse;
+import ru.netology.moneytransferservice.model.MoneyTransferServiceResponse;
 import ru.netology.moneytransferservice.model.exceptions.InputDataException;
 import ru.netology.moneytransferservice.service.MoneyTransferService;
 
@@ -18,12 +17,12 @@ public class MoneyTransferController {
     }
 
     @PostMapping("/transfer")
-    public Response transfer(@RequestBody MoneyTransferModel transferModel) throws InputDataException {
+    public MoneyTransferServiceResponse transfer(@RequestBody MoneyTransferModel transferModel) throws InputDataException {
         return service.transfer(transferModel);
     }
 
     @PostMapping("/confirmOperation")
-    public Response confirmOperation(@RequestBody ConfirmModel confirmModel) {
+    public MoneyTransferServiceResponse confirmOperation(@RequestBody ConfirmModel confirmModel) {
         return service.confirmOperation(confirmModel);
     }
 }

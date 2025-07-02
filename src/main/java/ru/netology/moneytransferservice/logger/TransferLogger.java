@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TransferLogger {
     private static volatile TransferLogger INSTANCE = null;
-    private File logFile = new File("src/main/resources/moneyTransfer.log");
+    private File logFile = new File("/app/container_output_dir/moneyTransfer.log");
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
     public static TransferLogger getInstance() {

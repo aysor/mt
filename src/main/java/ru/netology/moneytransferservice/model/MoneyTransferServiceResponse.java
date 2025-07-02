@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-public class Response {
+public class MoneyTransferServiceResponse {
     @JsonProperty("operationId")
     private int operationId;
 
-    public Response(int operationId){
+    public MoneyTransferServiceResponse(int operationId){
         this.operationId = operationId;
     }
 
@@ -16,7 +16,7 @@ public class Response {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Response response = (Response) o;
+        MoneyTransferServiceResponse response = (MoneyTransferServiceResponse) o;
         return operationId == response.operationId;
     }
 
